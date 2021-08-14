@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.IndexRedirectView.as_view(), name='index'),
     path('posts/', views.PostListView.as_view(), name='post-list'),
     path('posts/new', views.PostCreateView.as_view(), name='post-create'),
     path('posts/<int:post_id>', views.PostDetailView.as_view(), name='post-detail'),
